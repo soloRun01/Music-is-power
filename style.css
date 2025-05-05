@@ -1,0 +1,79 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: black;
+}
+@font-face {
+  font-family: "Autaut";
+  src: url("AutautGrotesk-Medium.otf");
+}
+@font-face {
+  font-family: "Calps";
+  src: url("Calps-Medium.ttf");
+}
+
+#app{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+h1{
+  font-family: "Autaut";
+  transform:scaleY(1.8);
+}
+.text-field{
+  margin-bottom: 200px;
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-height: 400px;
+}
+body{
+  overflow: hidden;
+}
+canvas{
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.text-field h3{
+  font-family: "Autaut";
+  font-weight: 200;
+  align-items: center;
+  width: 100%;
+  height: 20px;
+  justify-content: center;
+  line-height: 57px;
+  display: flex;
+  transform: scaleY(1.6);
+  letter-spacing: -1px;
+  font-weight: 700;
+  font-size: 5.8rem;
+}
+.blurLayer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(1px);
+  background: rgba(255, 255, 255, 0.199);
+  z-index: 999;
+}
+input{
+  width: 20%;
+  height: 4%;
+  border: 1px solid black;
+  outline: 0;
+  border-radius: 10px;
+  font-size: 1rem;
+  padding: 20px;
+  z-index: 999999999;
+  position: absolute;
+  bottom: 20px;
+}
