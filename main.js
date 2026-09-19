@@ -1,41 +1,30 @@
 // JavaScript
-let input = document.querySelector("input");
-let fieldText = document.querySelector(".text-field");
+const MAX_CHARACTERS = 40;
+const input = document.querySelector("input");
+const fieldText = document.querySelector(".text-field");
 
 function inputText() {
-  fieldText.innerHTML = ""; // Remove old h3
+  // Keep the limit in place even if text is pasted or inserted programmatically.
+  input.value = input.value.slice(0, MAX_CHARACTERS);
+  fieldText.innerHTML = "";
 
-  let h3 = document.createElement("h3");
+  const h3 = document.createElement("h3");
   h3.textContent = input.value;
 
-  let length = h3.textContent.length;
+  const length = h3.textContent.length;
 
-  // Font size based on total character length
-  if (length > 50) {
-    h3.style.fontSize = "0.5rem";
-  } else if (length > 40) {
-    h3.style.fontSize = "1rem";
-  } else if (length > 35) {
-    h3.style.fontSize = "3rem";
-  } else if (length > 15) {
-    h3.style.fontSize = "4rem";
-  } else {
-    h3.style.fontSize = "5.7rem";
-  }
-  
+  // Reduce the size gradually instead of jumping between very small sizes.
+  const fontSize = Math.max(3.7, 5.7 - Math.max(0, length - 15) * 0.08);
+  h3.style.fontSize = `${fontSize}rem`;
+
   fieldText.appendChild(h3);
 }
 
+input.maxLength = MAX_CHARACTERS;
 input.addEventListener("input", inputText);
-
-
-
 
 let blue = document.querySelector(".blue");
 let red = document.querySelector(".lime");
 let black = document.querySelector(".black");
 
-
 // three js now !!!
-
-
