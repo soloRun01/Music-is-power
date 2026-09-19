@@ -10,15 +10,6 @@ function inputText() {
 
   let length = h3.textContent.length;
 
-
-  h3.style.background = "blue"
-
-
-  if(length === 0 ){
-    h3.style.background = "white"
-
-  }
-
   // Font size based on total character length
   if (length > 50) {
     h3.style.fontSize = "0.5rem";
